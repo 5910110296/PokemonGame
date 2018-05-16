@@ -38,7 +38,7 @@ public class PokemonGame extends JFrame{
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-                            ta.append("\nPokemon Eat ... ");
+                            ta.append("\n\nPokemon Eat ... ");
                             Berry berry = new Berry(0);
                             for(Pokemon pokemon: pokemons)
                             pokemon.eat(berry);
@@ -50,7 +50,7 @@ public class PokemonGame extends JFrame{
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-                            ta.append("\nPokemon Exercies ... ");
+                            ta.append("\n\nPokemon Exercies ... ");
                             for(Pokemon pokemon: pokemons)
                                 pokemon.move();
 
@@ -61,7 +61,7 @@ public class PokemonGame extends JFrame{
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-                            ta.append("\nPokemon Battle ... ");
+                            ta.append("\n\nPokemon Battle ... ");
                             Pokemon pokemon1 = pokemons.get(0);
                             Pokemon pokemon2 = pokemons.get(1);
                             pokemon1.attack(pokemon2);
@@ -73,7 +73,7 @@ public class PokemonGame extends JFrame{
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-                            ta.append("\nAdd New Pikachu ... ");
+                            ta.append("\n\nAdd New Pikachu ... ");
                             pokemons.add(new Pikachu()); 
                             ta.append("\nPokemon List After Add ... \n===== Pokemon List =====\n" + printPokemons(pokemons));
                             //ta.setText();
@@ -82,7 +82,7 @@ public class PokemonGame extends JFrame{
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-                            ta.append("\nAdd New Keromatsu ... ");
+                            ta.append("\n\nAdd New Keromatsu ... ");
                             pokemons.add(new Keromatsu());
                             ta.append("\nPokemon List After Add ... \n===== Pokemon List =====\n"+ printPokemons(pokemons));
                             
