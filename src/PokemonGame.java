@@ -33,58 +33,58 @@ public class PokemonGame extends JFrame{
             bt3 = new JButton("Attack");
             bt4 = new JButton("Add New Pikachu");
             bt5 = new JButton("Add New Keromatsu");
-            ta.append("===== Pokemon List =====\n" +printPokemons(pokemons));
+            ta.append("===== Pokemon List =====\n");
+            ta.append(printPokemons(pokemons)+"\n");
             bt1.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-                            ta.append("\n\nPokemon Eat ... ");
+                            ta.append("\n\nPokemon Eat ... \nPokemon List After Ate ... \n===== Pokemon List =====\n" );
                             Berry berry = new Berry(0);
                             for(Pokemon pokemon: pokemons)
                             pokemon.eat(berry);
-
-                            ta.append("\nPokemon List After Ate ... \n===== Pokemon List =====\n" + printPokemons(pokemons));
+                            ta.append(printPokemons(pokemons)+"\n");
+                            
+                            
                             
                         }});
             bt2.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-                            ta.append("\n\nPokemon Exercies ... ");
+                            ta.append("\n\nPokemon Exercies ...\nPokemon List After Exercies ... \n===== Pokemon List =====\n");
                             for(Pokemon pokemon: pokemons)
                                 pokemon.move();
-
-                            ta.append("\nPokemon List After Exercies ... \n===== Pokemon List =====\n" + printPokemons(pokemons));
-                            
+                            ta.append(printPokemons(pokemons)+"\n");
+                          
                         }});
             bt3.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-                            ta.append("\n\nPokemon Battle ... ");
+                            ta.append("\n\nPokemon Battle ...\nPokemon List After Attack ... \n===== Pokemon List =====\n");
                             Pokemon pokemon1 = pokemons.get(0);
                             Pokemon pokemon2 = pokemons.get(1);
                             pokemon1.attack(pokemon2);
-                            
-                            ta.append("\nPokemon List After Attack ... \n===== Pokemon List =====\n" + printPokemons(pokemons));
+                            ta.append(printPokemons(pokemons)+"\n");
                             
                         }});
             bt4.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-                            ta.append("\n\nAdd New Pikachu ... ");
+                            ta.append("\n\nAdd New Pikachu ...\nPokemon List After Add ... \n===== Pokemon List =====\n");
                             pokemons.add(new Pikachu()); 
-                            ta.append("\nPokemon List After Add ... \n===== Pokemon List =====\n" + printPokemons(pokemons));
-                            //ta.setText();
+                            ta.append(printPokemons(pokemons)+"\n");
+                            
                         }});
             bt5.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-                            ta.append("\n\nAdd New Keromatsu ... ");
+                            ta.append("\n\nAdd New Keromatsu ...\nPokemon List After Add ... \n===== Pokemon List =====\n");
                             pokemons.add(new Keromatsu());
-                            ta.append("\nPokemon List After Add ... \n===== Pokemon List =====\n"+ printPokemons(pokemons));
+                            ta.append(printPokemons(pokemons)+"\n");
                             
                         }});
             pn1 = new JPanel();
@@ -117,10 +117,13 @@ public class PokemonGame extends JFrame{
         
 	public String printPokemons(ArrayList<Pokemon> pokemons){
                 String s = "";
+                String all = "";
 		for(Pokemon pokemon: pokemons){
                     s = "Pokemon "+pokemon.getName()+" health: "+pokemon.getHealth()+"/"+pokemon.maxHealth;
-		}
-                return s;
+                    all += s;
+                    all += "\n";
+                }
+                return all;
 	}
 
 	public static void main(String args[]){
