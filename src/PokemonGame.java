@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+
 public class PokemonGame extends JFrame{
         private JLabel lb1;
         private JTextArea ta;
